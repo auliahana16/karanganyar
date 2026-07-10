@@ -1,19 +1,11 @@
-/* ============================================================
-   LARAS — Multi-Language Engine (Vanilla JS, no backend)
-   Bahasa: Indonesia (default) · English · Basa Jawa
-   ============================================================ */
 (function () {
   'use strict';
 
   var STORAGE_KEY = 'laras_lang';
   var DEFAULT_LANG = 'id';
   var SUPPORTED = ['id', 'en', 'jv'];
-  var FADE_MS = 150; // out + in ≈ 300ms total, per spec
+  var FADE_MS = 150; 
 
-  /* ---------------------------------------------------------
-     1) STATIC UI TRANSLATIONS
-     Tambah/ubah teks di sini saja — tidak perlu ubah HTML.
-     --------------------------------------------------------- */
   var translations = {
     id: {
       meta: { title: 'LARAS — Temukan Warisan Hidup Karanganyar', description: 'LARAS adalah Digital Heritage Experience Platform yang mengajak Anda menjelajahi jiwa budaya Kabupaten Karanganyar.' },
