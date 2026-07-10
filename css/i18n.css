@@ -145,27 +145,43 @@
 @media (max-width: 768px) {
   .lang-switcher {
     width: 100%;
-    margin: 0.3rem 0 0 0;
-    padding: 0.5rem 0 0;
+    margin: 0.4rem 0 0 0;
+    padding: 0.55rem 0 0;
     border-left: none;
-    border-top: 1px solid rgba(212, 177, 90, 0.18);
+    border-top: 1px solid rgba(212, 177, 90, 0.14);
     flex-direction: column;
     align-items: stretch;
     flex-shrink: 0;
   }
   .lang-switcher__trigger {
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
     min-height: 40px;
-    padding: 0.5rem 0.65rem;
+    padding: 0.5rem 0.7rem;
     border-radius: 10px;
-    font-size: 0.76rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.09em;
     color: #D4B15A;
     text-shadow: none;
   }
+  .lang-switcher__globe {
+    flex: 0 0 auto;
+  }
+  .lang-switcher__current {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  .lang-switcher__chevron {
+    flex: 0 0 auto;
+    transform: rotate(-90deg);
+  }
+  .lang-switcher.is-open .lang-switcher__chevron {
+    transform: rotate(-90deg) rotate(180deg);
+  }
   .lang-switcher__trigger:hover,
   .lang-switcher.is-open .lang-switcher__trigger {
-    background: rgba(212, 177, 90, 0.14);
+    background: rgba(212, 177, 90, 0.07);
     color: #FFFFFF;
   }
   .lang-switcher__menu {
@@ -174,31 +190,33 @@
     width: 100%;
     min-width: 0;
     max-width: none;
-    background: rgba(255, 255, 255, 0.035);
+    background: transparent;
     border: none;
     box-shadow: none;
     opacity: 1;
     visibility: visible;
     transform: none;
     max-height: 0;
-    padding: 0 0.3rem;
+    padding: 0 0.2rem;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
   }
   .lang-switcher.is-open .lang-switcher__menu {
     max-height: 220px;
-    padding: 0.3rem;
+    padding: 0.2rem;
     overflow-y: auto;
   }
   .lang-switcher__menu li {
     min-height: 40px;
     padding: 0.6rem 0.65rem;
-    font-size: 0.82rem;
-    color: rgba(255, 253, 248, 0.85);
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: rgba(255, 253, 248, 0.82);
+    border-radius: 10px;
   }
   .lang-switcher__menu li:hover,
   .lang-switcher__menu li:focus-visible {
-    background: rgba(212, 177, 90, 0.14);
+    background: rgba(212, 177, 90, 0.07);
     color: #FFFFFF;
   }
   .lang-switcher__menu li.is-active {
@@ -209,5 +227,6 @@
   }
   .lang-switcher__code {
     color: #D4B15A;
+    font-weight: 600;
   }
 }
