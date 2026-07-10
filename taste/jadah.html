@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jadah — Taste of Karanganyar | LARAS</title>
+<meta name="description" content="Ketan yang dipadatkan dengan kesederhanaan rasa khas pegunungan Lawu — camilan wajib para pendaki dan warga lereng.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/detail.css">
+<link rel="stylesheet" href="../css/i18n.css">
+</head>
+<body class="detail-body">
+
+<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+
+<header class="nav" id="nav">
+  <a href="../index.html" class="nav__brand"><img src="../images/logo-sm.png" alt="Laras"><span class="nav__brand-word">LARAS</span></a>
+  <nav class="nav__links" id="navLinks">
+    <a href="../about.html" data-i18n="nav.about">Tentang</a>
+    <a href="../index.html#journey" data-i18n="nav.journey">Jelajahi</a>
+    <a href="../index.html#map" data-i18n="nav.map">Peta</a>
+    <a href="../index.html#preserve" data-i18n="nav.preserve">Lestarikan</a>
+
+    <!-- LANGUAGE SWITCHER — desktop: inline in navbar; mobile: inside hamburger menu -->
+    <div class="lang-switcher" id="langSwitcher">
+      <button type="button" class="lang-switcher__trigger" id="langTrigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
+        <span class="lang-switcher__globe" aria-hidden="true">&#127760;</span>
+        <span class="lang-switcher__current" data-lang-current>ID</span>
+        <span class="lang-switcher__chevron" aria-hidden="true">&#9662;</span>
+      </button>
+      <ul class="lang-switcher__menu" id="langMenu" role="listbox" aria-label="Choose language">
+        <li role="option" data-lang="id" aria-selected="true" tabindex="0">
+          <span class="lang-switcher__code">ID</span><span class="lang-switcher__name">Indonesia</span>
+        </li>
+        <li role="option" data-lang="en" aria-selected="false" tabindex="0">
+          <span class="lang-switcher__code">EN</span><span class="lang-switcher__name">English</span>
+        </li>
+        <li role="option" data-lang="jv" aria-selected="false" tabindex="0">
+          <span class="lang-switcher__code">JW</span><span class="lang-switcher__name">Basa Jawa</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <button class="nav__toggle" id="navToggle" data-i18n-aria="nav.toggle" aria-label="Buka menu"><span></span><span></span><span></span></button>
+</header>
+
+<section class="detail-hero">
+  <div class="detail-hero__bg" style="background-image:url('../images/jadahtempe.jpg')"></div>
+  <div class="detail-hero__content">
+    <p class="detail-hero__tag" data-i18n="taste.jadah.crumb">Taste of Karanganyar</p>
+    <h1 class="detail-hero__title" data-i18n="taste.jadah.hero.title">Jadah</h1>
+    <p class="detail-hero__lead" data-i18n="taste.jadah.hero.subtitle">Di pos-pos pendakian Gunung Lawu, sepotong jadah dengan tempe bacem hangat selalu menjadi teman setia perjalanan.</p>
+  </div>
+</section>
+
+<article class="detail-content">
+  <p data-i18n="taste.jadah.intro">Sebelum matahari terbit, warung-warung kecil di lereng Gunung Lawu sudah menyiapkan jadah untuk para pendaki yang akan memulai perjalanan panjang ke puncak. Terbuat dari ketan yang dikukus lalu dipadatkan, jadah hadir dalam kesederhanaannya yang tak bisa digantikan — hangat, mengenyangkan, dan selalu mengingatkan siapa pun yang memakannya pada udara dingin dan kabut lereng Lawu.</p>
+
+  <h2 data-i18n="taste.jadah.history.title">Bekal Kekuatan dari Leluhur</h2>
+  <p data-i18n="taste.jadah.history.description">Jadah bukan camilan baru. Ia adalah bekal tradisional yang sudah dikenal masyarakat pegunungan Jawa sejak lama, dibawa ke ladang atau ke perjalanan panjang karena kandungan energi karbohidratnya yang padat. Di lereng Lawu, jadah biasanya disajikan bersama tempe bacem manis atau gula merah cair — kombinasi rasa manis dan gurih yang sederhana namun memuaskan.</p>
+
+  <blockquote data-i18n="taste.jadah.quote">"Jadah itu makanan pendaki. Sebelum naik, makan jadah dulu. Sampai atas, badan tetap hangat dan kuat."</blockquote>
+
+  <h3 data-i18n="taste.jadah.ingredients.title">Fakta Menarik</h3>
+  <ul>
+    <li data-i18n="taste.jadah.ingredients.items.0">Jadah dibuat dari ketan putih yang dikukus, lalu ditumbuk atau dipadatkan hingga teksturnya kenyal dan padat</li>
+    <li data-i18n="taste.jadah.ingredients.items.1">Biasanya disajikan hangat bersama tempe bacem, gula merah, atau kelapa parut berbumbu</li>
+    <li data-i18n="taste.jadah.ingredients.items.2">Menjadi salah satu camilan khas yang dicari wisatawan dan pendaki di kawasan Tawangmangu</li>
+    <li data-i18n="taste.jadah.ingredients.items.3">Beberapa penjual jadah di lereng Lawu sudah berdagang di tempat yang sama selama puluhan tahun</li>
+  </ul>
+
+  <div class="detail-gallery detail-gallery--single">
+    <img src="../images/jadahtempe.jpg" data-i18n-alt="taste.jadah.gallery.alt" alt="Jadah khas lereng Gunung Lawu" loading="lazy" decoding="async">
+  </div>
+
+  <h2 data-i18n="taste.jadah.why.title">Mengapa Penting?</h2>
+  <p data-i18n="taste.jadah.why.description">Dalam kesederhanaannya, jadah menyimpan filosofi hidup masyarakat pegunungan: bahwa kekuatan tidak selalu datang dari sesuatu yang rumit atau mahal. Sebutir ketan yang dipadatkan dengan penuh perhatian cukup untuk menghangatkan tubuh dan menemani perjalanan panjang menyusuri lereng Lawu.</p>
+</article>
+
+<div class="detail-nav">
+  <a href="../taste/timlo.html" data-i18n="taste.jadah.nav.prev">← Timlo</a>
+  <a href="../taste/sate-kelinci.html" data-i18n="taste.jadah.nav.next">Sate Kelinci →</a>
+</div>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <span class="footer__brand">LARAS</span>
+    <p data-i18n="footer.tagline">Discover the Living Heritage of Karanganyar</p>
+    <small data-i18n="footer.credit">Dibuat untuk BYTESFEST 2026 — CultureVerse</small>
+  </div>
+</footer>
+
+<script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

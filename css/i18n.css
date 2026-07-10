@@ -1,0 +1,178 @@
+/* ============================================================
+   LARAS — Multi-Language UI
+   Custom language switcher + fade transition on text swap
+   ============================================================ */
+
+/* Fade transition applied to every translatable text node (~300ms
+   total: 150ms fade-out -> swap content -> 150ms fade-in) */
+[data-i18n],
+[data-i18n-html] {
+  transition: opacity 0.15s ease;
+}
+.i18n-fade {
+  opacity: 0 !important;
+}
+
+/* ========== LANGUAGE SWITCHER — desktop (inline in navbar) ========== */
+.lang-switcher {
+  position: relative;
+  margin-left: 0.5rem;
+  padding-left: 0.7rem;
+  border-left: 1px solid rgba(255, 253, 248, 0.22);
+  display: flex;
+  align-items: center;
+}
+.lang-switcher__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-nav);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 253, 248, 0.92);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  transition: var(--transition);
+}
+.lang-switcher__globe {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+.lang-switcher__chevron {
+  font-size: 0.6rem;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0.75;
+}
+.lang-switcher__trigger:hover,
+.lang-switcher.is-open .lang-switcher__trigger {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.09);
+}
+.lang-switcher.is-open .lang-switcher__chevron {
+  transform: rotate(180deg);
+}
+.lang-switcher__trigger:focus-visible {
+  outline: 1px solid var(--gold-light);
+  outline-offset: 3px;
+}
+
+.lang-switcher__menu {
+  list-style: none;
+  margin: 0;
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  min-width: 176px;
+  background: rgba(10, 22, 17, 0.97);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 0.4rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.32);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 1200;
+}
+.lang-switcher.is-open .lang-switcher__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.lang-switcher__menu li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: rgba(255, 253, 248, 0.85);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.lang-switcher__menu li:hover,
+.lang-switcher__menu li:focus-visible {
+  background: rgba(255, 255, 255, 0.09);
+  color: #fff;
+  outline: none;
+}
+.lang-switcher__menu li.is-active {
+  color: var(--gold-light);
+}
+.lang-switcher__menu li.is-active::after {
+  content: '';
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--gold-light);
+  margin-left: auto;
+}
+.lang-switcher__code {
+  font-family: var(--font-nav);
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--gold-light);
+  width: 26px;
+  flex-shrink: 0;
+}
+.lang-switcher__name {
+  font-weight: 500;
+}
+
+/* Nav "scrolled" (light) state — match the existing nav link color swap */
+.nav.scrolled .lang-switcher {
+  border-left-color: rgba(43, 33, 27, 0.16);
+}
+.nav.scrolled .lang-switcher__trigger {
+  color: #2b2b26;
+  text-shadow: none;
+}
+.nav.scrolled .lang-switcher__trigger:hover,
+.nav.scrolled .lang-switcher.is-open .lang-switcher__trigger {
+  background: rgba(43, 43, 38, 0.06);
+  color: var(--gold-dark);
+}
+
+/* ========== LANGUAGE SWITCHER — mobile (inside hamburger menu) ========== */
+@media (max-width: 768px) {
+  .lang-switcher {
+    width: 100%;
+    margin: 0.5rem 0 0;
+    padding: 0.7rem 0.2rem 0;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lang-switcher__trigger {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.6rem 0.6rem;
+  }
+  .lang-switcher__menu {
+    position: static;
+    margin-top: 0.2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: none;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    max-height: 0;
+    padding: 0 0.4rem;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  .lang-switcher.is-open .lang-switcher__menu {
+    max-height: 220px;
+    padding: 0.4rem;
+  }
+}

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tentang Laras — Digital Heritage Experience Platform</title>
+<meta name="description" content="Tentang Laras, platform pengalaman digital yang mengajak Anda menjelajahi jiwa budaya Kabupaten Karanganyar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/detail.css">
+<link rel="stylesheet" href="css/i18n.css">
+</head>
+<body>
+
+<div class="loader" id="loader">
+  <img class="loader__mark" src="images/logo-sm.png" alt="Laras">
+  <span class="loader__word">LARAS</span>
+</div>
+
+<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="nav__brand"><img src="images/logo-sm.png" alt="Laras"><span class="nav__brand-word">LARAS</span></a>
+  <nav class="nav__links" id="navLinks">
+    <a href="about.html" data-i18n="nav.about">Tentang</a>
+    <a href="index.html#journey" data-i18n="nav.journey">Jelajahi</a>
+    <a href="index.html#map" data-i18n="nav.map">Peta</a>
+    <a href="index.html#preserve" data-i18n="nav.preserve">Lestarikan</a>
+
+    <!-- LANGUAGE SWITCHER — desktop: inline in navbar; mobile: inside hamburger menu -->
+    <div class="lang-switcher" id="langSwitcher">
+      <button type="button" class="lang-switcher__trigger" id="langTrigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
+        <span class="lang-switcher__globe" aria-hidden="true">&#127760;</span>
+        <span class="lang-switcher__current" data-lang-current>ID</span>
+        <span class="lang-switcher__chevron" aria-hidden="true">&#9662;</span>
+      </button>
+      <ul class="lang-switcher__menu" id="langMenu" role="listbox" aria-label="Choose language">
+        <li role="option" data-lang="id" aria-selected="true" tabindex="0">
+          <span class="lang-switcher__code">ID</span><span class="lang-switcher__name">Indonesia</span>
+        </li>
+        <li role="option" data-lang="en" aria-selected="false" tabindex="0">
+          <span class="lang-switcher__code">EN</span><span class="lang-switcher__name">English</span>
+        </li>
+        <li role="option" data-lang="jv" aria-selected="false" tabindex="0">
+          <span class="lang-switcher__code">JW</span><span class="lang-switcher__name">Basa Jawa</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <button class="nav__toggle" id="navToggle" data-i18n-aria="nav.toggle" aria-label="Buka menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ABOUT HERO -->
+<section class="d-hero">
+  <img src="images/bg.png" alt="Pemandangan alam Kabupaten Karanganyar">
+  <div class="d-hero__overlay"></div>
+  <div class="d-hero__content">
+    <p class="crumb" data-i18n="aboutPage.hero.crumb">Tentang</p>
+    <h1 class="d-hero__title" data-i18n="aboutPage.hero.title">Tentang Laras</h1>
+    <p class="d-hero__sub" data-i18n="aboutPage.hero.subtitle">Laras adalah Digital Heritage Experience Platform — ruang untuk merasakan, bukan sekadar membaca, jiwa budaya Kabupaten Karanganyar.</p>
+  </div>
+</section>
+
+<!-- BIG IDEA -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="d-intro reveal">
+      <span class="eyebrow" data-i18n="aboutPage.philosophy.eyebrow">Filosofi Kami</span>
+      <p class="d-intro__text" data-i18n="aboutPage.philosophy.text">Budaya bukan sesuatu yang hanya disimpan di museum. Budaya adalah sesuatu yang hidup, terus berkembang bersama masyarakat, dan harus dikenalkan kembali kepada generasi muda melalui teknologi digital. Karena itu, Laras mengubah pengalaman mengenal budaya menjadi sebuah perjalanan digital.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MAKNA NAMA -->
+<section class="section section--tight section--alt">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="aboutPage.meaning.eyebrow">Makna Nama</span>
+      <h2 class="h-md" style="margin-top:14px;" data-i18n="aboutPage.meaning.title">Laras Berarti Harmoni</h2>
+      <p class="lede" style="margin-top:18px;" data-i18n="aboutPage.meaning.text">Dalam budaya Jawa, "Laras" berarti keselarasan — harmoni antara sejarah, budaya, manusia, alam, tradisi, dan masa depan. Laras bukan media informasi, bukan portal pemerintah, dan bukan website wisata. Laras adalah ruang untuk merasakan perjalanan budaya Karanganyar melalui pengalaman digital yang modern.</p>
+    </div>
+    <div class="figure reveal" data-delay="150">
+      <img src="images/logo-tentang.png" alt="Candi Cetho — harmoni budaya dan alam Karanganyar" loading="lazy">
+      <div class="figure__frame"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TUJUAN -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="aboutPage.purpose.eyebrow">Tujuan Kami</span>
+      <h2 class="h-lg" style="margin-top:16px;" data-i18n="aboutPage.purpose.title">Mengapa Laras Hadir</h2>
+    </div>
+    <div class="related-grid">
+      <div class="related-card reveal" style="padding:1.8rem;">
+        <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--forest-deep);" data-i18n="aboutPage.purpose.cards.introduce.title">Memperkenalkan Budaya</h3>
+        <p style="margin-top:.6rem;font-size:.9rem;color:var(--brown-soft);line-height:1.65;" data-i18n="aboutPage.purpose.cards.introduce.desc">Mengenalkan kekayaan budaya Kabupaten Karanganyar kepada generasi masa kini secara modern dan mendalam.</p>
+      </div>
+      <div class="related-card reveal" data-delay="100" style="padding:1.8rem;">
+        <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--forest-deep);" data-i18n="aboutPage.purpose.cards.education.title">Edukasi Digital</h3>
+        <p style="margin-top:.6rem;font-size:.9rem;color:var(--brown-soft);line-height:1.65;" data-i18n="aboutPage.purpose.cards.education.desc">Menjadi media edukasi yang mendukung pelestarian budaya sejalan dengan SDG 11: Kota dan Permukiman Berkelanjutan.</p>
+      </div>
+      <div class="related-card reveal" data-delay="200" style="padding:1.8rem;">
+        <h3 style="font-family:var(--font-display);font-size:1.1rem;color:var(--forest-deep);" data-i18n="aboutPage.purpose.cards.connect.title">Menghubungkan Generasi</h3>
+        <p style="margin-top:.6rem;font-size:.9rem;color:var(--brown-soft);line-height:1.65;" data-i18n="aboutPage.purpose.cards.connect.desc">Menjembatani budaya tradisional dengan generasi digital agar rasa bangga terhadap budaya lokal terus tumbuh.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARGET PENGGUNA -->
+<section class="section section--alt">
+  <div class="container split">
+    <div class="reveal">
+      <h2 class="h-md" style="margin-top:14px;" data-i18n="aboutPage.audience.title">Ditujukan bagi Setiap Pecinta Budaya</h2>
+      <p class="lede" style="margin-top:18px;" data-i18n="aboutPage.audience.text">Laras dirancang untuk Generasi Z, pelajar, mahasiswa, wisatawan, masyarakat umum, hingga siapa pun yang mencintai budaya Indonesia — siapa pun yang ingin merasakan, bukan sekadar membaca, kekayaan budaya Karanganyar.</p>
+    </div>
+    <div class="reveal" data-delay="150">
+      <h2 class="h-md" style="margin-top:14px;" data-i18n="aboutPage.competition.title">CultureVerse: Preserving Heritage Through Design</h2>
+      <p class="lede" style="margin-top:18px;" data-i18n="aboutPage.competition.text">Laras dirancang sebagai karya untuk kompetisi BYTESFEST 2026 dengan subtema CultureVerse, menggabungkan storytelling, desain modern, dan teknologi web statis untuk membuktikan bahwa teknologi dapat menjadi media efektif pelestarian warisan budaya.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="preserve">
+  <div class="preserve__inner">
+    <p class="eyebrow eyebrow--light reveal" data-i18n="aboutPage.cta.eyebrow">Mulai Sekarang</p>
+    <h2 class="preserve__title reveal" data-i18n-html="aboutPage.cta.quoteHtml">"Every Heritage Lives Because<br>Someone Chooses to Preserve It."</h2>
+    <a href="index.html#journey" class="btn btn--gold reveal" data-i18n="aboutPage.cta.button">Mulai Menjelajah</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <span class="footer__brand">LARAS</span>
+    <p data-i18n="footer.tagline">Discover the Living Heritage of Karanganyar</p>
+    <small data-i18n="aboutPage.footer.credit">CultureVerse: Preserving Heritage Through Design</small>
+    <div style="display:flex;justify-content:center;gap:.6rem;margin-top:1rem;font-size:.78rem;">
+      <a href="index.html" style="color:var(--gold);text-decoration:underline;text-underline-offset:3px;" data-i18n="aboutPage.footer.backHome">Kembali ke Beranda</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
