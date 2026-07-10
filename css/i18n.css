@@ -1,10 +1,3 @@
-/* ============================================================
-   LARAS — Multi-Language UI
-   Custom language switcher + fade transition on text swap
-   ============================================================ */
-
-/* Fade transition applied to every translatable text node (~300ms
-   total: 150ms fade-out -> swap content -> 150ms fade-in) */
 [data-i18n],
 [data-i18n-html] {
   transition: opacity 0.15s ease;
@@ -12,8 +5,6 @@
 .i18n-fade {
   opacity: 0 !important;
 }
-
-/* ========== LANGUAGE SWITCHER — desktop (inline in navbar) ========== */
 .lang-switcher {
   position: relative;
   margin-left: 0.5rem;
@@ -127,7 +118,6 @@
   font-weight: 500;
 }
 
-/* Nav "scrolled" (light) state — match the existing nav link color swap */
 .nav.scrolled .lang-switcher {
   border-left-color: rgba(43, 33, 27, 0.16);
 }
@@ -141,7 +131,6 @@
   color: var(--gold-dark);
 }
 
-/* ========== LANGUAGE SWITCHER — mobile (inside hamburger menu) ========== */
 @media (max-width: 768px) {
   .lang-switcher {
     width: 100%;
