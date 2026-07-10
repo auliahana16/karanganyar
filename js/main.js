@@ -59,6 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768 && navLinks.classList.contains('active')) closeMobileNav();
     });
+    // Floating dropdown: close when tapping/clicking outside it
+    document.addEventListener('click', (e) => {
+      if (!navLinks.classList.contains('active')) return;
+      if (navLinks.contains(e.target) || navToggle.contains(e.target)) return;
+      closeMobileNav();
+    });
   }
 
   // ===== HERO REVEAL ANIMATIONS =====
