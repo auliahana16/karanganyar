@@ -1,3 +1,10 @@
+/* ============================================================
+   LARAS — Multi-Language UI
+   Custom language switcher + fade transition on text swap
+   ============================================================ */
+
+/* Fade transition applied to every translatable text node (~300ms
+   total: 150ms fade-out -> swap content -> 150ms fade-in) */
 [data-i18n],
 [data-i18n-html] {
   transition: opacity 0.15s ease;
@@ -5,6 +12,8 @@
 .i18n-fade {
   opacity: 0 !important;
 }
+
+/* ========== LANGUAGE SWITCHER — desktop (inline in navbar) ========== */
 .lang-switcher {
   position: relative;
   margin-left: 0.5rem;
@@ -118,6 +127,7 @@
   font-weight: 500;
 }
 
+/* Nav "scrolled" (light) state — match the existing nav link color swap */
 .nav.scrolled .lang-switcher {
   border-left-color: rgba(43, 33, 27, 0.16);
 }
@@ -131,25 +141,33 @@
   color: var(--gold-dark);
 }
 
+/* ========== LANGUAGE SWITCHER — mobile (inside hamburger menu) ========== */
 @media (max-width: 768px) {
   .lang-switcher {
     width: 100%;
-    margin: 0.5rem 0 0;
-    padding: 0.7rem 0.2rem 0;
+    margin: auto 0 0 0;
+    padding: 1.1rem 0.2rem 0;
     border-left: none;
     border-top: 1px solid rgba(255, 255, 255, 0.14);
     flex-direction: column;
     align-items: stretch;
+    flex-shrink: 0;
   }
   .lang-switcher__trigger {
     width: 100%;
     justify-content: space-between;
-    padding: 0.6rem 0.6rem;
+    min-height: 48px;
+    padding: 0.7rem 0.7rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
   }
   .lang-switcher__menu {
     position: static;
-    margin-top: 0.2rem;
-    background: rgba(255, 255, 255, 0.03);
+    margin-top: 0.3rem;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    background: rgba(255, 255, 255, 0.04);
     border: none;
     box-shadow: none;
     opacity: 1;
@@ -161,7 +179,13 @@
     transition: max-height 0.3s ease, padding 0.3s ease;
   }
   .lang-switcher.is-open .lang-switcher__menu {
-    max-height: 220px;
+    max-height: 260px;
     padding: 0.4rem;
+    overflow-y: auto;
+  }
+  .lang-switcher__menu li {
+    min-height: 48px;
+    padding: 0.75rem 0.7rem;
+    font-size: 0.9rem;
   }
 }
