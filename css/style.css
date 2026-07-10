@@ -1,33 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap');
-
-/* ============================================
-   LARAS — Digital Heritage Experience Platform
-   Premium Heritage Redesign
-   Palette: Deep Forest Green + Warm Gold + Terracotta + Warm Ivory + Dark Charcoal
-   ============================================ */
-
 :root {
-  /* ---- Warm heritage palette ---- */
-  --bg-deep: #FBF6EC;        /* warm ivory */
-  --bg-dark: #F4ECDC;        /* warm ivory soft */
+  --bg-deep: #FBF6EC;        
+  --bg-dark: #F4ECDC;       
   --bg-card: #FFFFFF;
   --bg-card-hover: #FFFFFF;
   --glass: rgba(255,253,248,0.66);
   --glass-strong: rgba(255,253,248,0.82);
   --glass-border: rgba(43,33,27,0.10);
 
-  --forest-deep: #1B4332;   /* primary — deep forest green */
-  --forest-mid: #2F6F52;    /* secondary green */
-  --forest-light: #B9652E;  /* terracotta accent */
-  --gold: #C9A227;          /* warm / dark gold */
+  --forest-deep: #1B4332;   
+  --forest-mid: #2F6F52;    
+  --forest-light: #B9652E;  
+  --gold: #C9A227;          
   --gold-light: #E3C168;
   --gold-dark: #A47E1B;
-  --indigo: #8B4A2B;        /* bronze accent */
+  --indigo: #8B4A2B;        
   --indigo-light: #C97B3D;
-  --orange: #C9703F;        /* terracotta accent */
+  --orange: #C9703F;        
 
-  --cream: #2B211B;         /* heading text — dark charcoal */
-  --cream-soft: #FFFFFF;    /* light text, used on photo overlays */
+  --cream: #2B211B;        
+  --cream-soft: #FFFFFF;    
   --brown-soft: #6B5A48;
 
   --text-primary: #2B211B;
@@ -65,7 +57,6 @@ body {
   line-height: 1.6;
 }
 
-/* ========== LOADER ========== */
 .loader {
   position: fixed; inset: 0; z-index: 9999;
   background: linear-gradient(135deg, #FBF6EC, #E8F7F0);
@@ -89,7 +80,6 @@ body {
   50% { opacity: 1; transform: scale(1.06) translateY(-4px); }
 }
 
-/* ========== PROGRESS BAR ========== */
 .progress-rail {
   position: fixed; top: 0; left: 0; right: 0; height: 3px;
   background: rgba(27,67,50,0.08); z-index: 1001;
@@ -100,7 +90,6 @@ body {
   transition: width 0.1s linear;
 }
 
-/* ========== NAVIGATION (dark model) ========== */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   display: flex; align-items: center; justify-content: space-between;
@@ -183,7 +172,6 @@ body {
   outline: 1px solid var(--gold-light); outline-offset: 3px;
 }
 
-/* ========== HERO ========== */
 .hero {
   position: relative; width: 100%; min-height: 100vh;
   display: flex; align-items: center; justify-content: center;
@@ -287,7 +275,6 @@ body {
 .btn.visible { opacity: 0; transform: translateY(20px); animation: fadeUp 0.8s 1.5s ease forwards; }
 @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
-/* Hero scroll indicator */
 .hero__scroll {
   position: absolute; bottom: 2.5rem; left: 50%;
   transform: translateX(-50%); z-index: 2;
@@ -298,7 +285,6 @@ body {
 .hero__scroll-line i { position: absolute; top: -10px; left: 0; width: 100%; height: 10px; background: var(--gold); animation: scrollLine 2s ease-in-out infinite; }
 @keyframes scrollLine { 0% { top: -10px; opacity: 0; } 50% { opacity: 1; } 100% { top: 40px; opacity: 0; } }
 
-/* ========== ABOUT SECTION ========== */
 .about { padding: 8rem 0; position: relative; overflow: hidden; }
 .about__inner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; text-align: center; padding: 0 2rem; }
 .about .eyebrow { font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--forest-deep); margin-bottom: 1.5rem; font-weight: 600; }
@@ -335,7 +321,6 @@ body {
 }
 .stat__label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.6rem; display: block; }
 
-/* ========== JOURNEY SECTION ========== */
 .journey { padding: 6rem 2rem; max-width: 1200px; margin: 0 auto; }
 .eyebrow { font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--forest-deep); font-weight: 600; display: block; margin-bottom: 1rem; }
 .eyebrow--center { text-align: center; }
@@ -382,7 +367,6 @@ body {
 .jcard__link:hover { gap: 0.6rem; color: var(--forest-light); }
 .jcard__link i { transition: var(--transition); }
 
-/* ========== FEATURED STORIES — Auto Infinite Scroll ========== */
 .stories { padding: 6rem 0; background: var(--bg-dark); overflow: hidden; }
 .stories__track-wrap { margin-top: 3rem; overflow-x: hidden; overflow-y: visible; position: relative; padding: 3.6rem 0; }
 .stories__track-wrap::before, .stories__track-wrap::after {
@@ -409,9 +393,6 @@ body {
   transition: box-shadow 0.45s ease;
 }
 .story:hover { box-shadow: var(--shadow-lift); }
-/* Wave arc: vertical position of each card is computed live in JS (main.js) with
-   a cosine curve based on the card's horizontal position inside the track-wrap —
-   center of the visible row sits highest, left/right edges settle lower. */
 .story__media { height: 220px; background-size: cover; background-position: center; position: relative; }
 .story__media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.25) 100%); }
 .story__tag {
@@ -449,9 +430,6 @@ body {
   .stories__nav--prev { left: 0.35rem; }
   .stories__nav--next { right: 0.35rem; }
 }
-
-/* ========== MAP SECTION ========== */
-/* ========== DESTINATION EXPLORER (Journey Map) ========== */
 .explorer {
   position: relative;
   max-width: 1240px; margin: 6rem auto; padding: 4rem 2.5rem 3.5rem;
@@ -548,7 +526,6 @@ body {
 .panel-btn--secondary { background: transparent; border: 1px solid var(--glass-border); color: var(--forest-deep); }
 .panel-btn--secondary:hover { transform: translateY(-3px); background: var(--bg-card); }
 
-/* Custom brown-gold markers */
 .dest-pin {
   width: 34px; height: 34px; border-radius: 50% 50% 50% 0; position: relative;
   transform: rotate(-45deg);
@@ -575,12 +552,9 @@ body {
 .map-region-boundary { animation: boundaryGlow 3s ease-in-out infinite; }
 @keyframes boundaryGlow { 0%,100% { opacity: 0.85; } 50% { opacity: 1; } }
 
-/* legacy SVG map rules kept (unused, harmless) */
 .map { width: 100%; max-width: 760px; height: auto; border-radius: var(--radius); }
 .map__grid line { stroke: var(--indigo-light); stroke-width: 1; opacity: 0.12; }
 
-
-/* ========== PRESERVE / CTA ========== */
 .preserve { position: relative; padding: 8rem 2rem; text-align: center; overflow: hidden; }
 .preserve::before {
   content: ''; position: absolute; inset: 0;
@@ -601,7 +575,6 @@ body {
 }
 .preserve .glow-orb { opacity: 0.18; }
 
-/* ========== AMBIENT ANIMATIONS ========== */
 .glow-orb { position: absolute; border-radius: 50%; filter: blur(70px); pointer-events: none; z-index: 0; opacity: 0.35; }
 .glow-orb--gold { background: radial-gradient(circle, var(--gold) 0%, transparent 70%); }
 .glow-orb--teal { background: radial-gradient(circle, var(--forest-light) 0%, transparent 70%); }
@@ -653,11 +626,9 @@ body {
 .footer small { font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.05em; }
 .footer a { color: var(--forest-deep); text-decoration: underline; text-underline-offset: 3px; font-size: 0.78rem; }
 
-/* ========== REVEAL ANIMATIONS ========== */
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
   .journey__grid { grid-template-columns: repeat(2, 1fr); }
   .jcard--wide { grid-column: span 2; }
