@@ -156,12 +156,13 @@
   .lang-switcher__trigger {
     width: 100%;
     justify-content: flex-start;
-    min-height: 40px;
-    padding: 0.5rem 0.7rem;
+    min-height: 44px;
+    padding: 0.5rem 0.85rem;
     border-radius: 10px;
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.09em;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
     color: #D4B15A;
     text-shadow: none;
   }
@@ -207,9 +208,9 @@
     overflow-y: auto;
   }
   .lang-switcher__menu li {
-    min-height: 40px;
-    padding: 0.6rem 0.65rem;
-    font-size: 0.78rem;
+    min-height: 44px;
+    padding: 0.6rem 0.7rem;
+    font-size: 14px;
     font-weight: 400;
     color: rgba(255, 253, 248, 0.82);
     border-radius: 10px;
