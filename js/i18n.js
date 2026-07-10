@@ -1,19 +1,10 @@
-/* ============================================================
-   LARAS — Multi-Language Engine (Vanilla JS, no backend)
-   Bahasa: Indonesia (default) · English · Basa Jawa
-   ============================================================ */
 (function () {
   'use strict';
 
   var STORAGE_KEY = 'laras_lang';
   var DEFAULT_LANG = 'id';
   var SUPPORTED = ['id', 'en', 'jv'];
-  var FADE_MS = 150; // out + in ≈ 300ms total, per spec
-
-  /* ---------------------------------------------------------
-     1) STATIC UI TRANSLATIONS
-     Tambah/ubah teks di sini saja — tidak perlu ubah HTML.
-     --------------------------------------------------------- */
+  var FADE_MS = 150; 
   var translations = {
     id: {
       meta: { title: 'LARAS — Temukan Warisan Hidup Karanganyar', description: 'LARAS adalah Digital Heritage Experience Platform yang mengajak Anda menjelajahi jiwa budaya Kabupaten Karanganyar.' },
@@ -1726,11 +1717,6 @@
     }
   };
 
-  /* ---------------------------------------------------------
-     2) DESTINATION DATA TRANSLATIONS (Explorer / Living Map)
-     Nama tempat & lokasi dibiarkan sama di semua bahasa
-     (nama diri), yang diterjemahkan: deskripsi, jam, harga, fakta.
-     --------------------------------------------------------- */
   var destinationsI18n = {
     'candi-sukuh': {
       id: { desc: 'Candi filosofi di lereng Lawu, simbol kesucian dan kesuburan.', hours: '08.00 \u2013 17.00 WIB', price: 'Rp15.000', fact: 'Salah satu candi tertua bercorak simbolis di Jawa, dibangun sekitar abad ke-15.' },
@@ -1794,15 +1780,11 @@
     }
   };
 
-  // Maps a destination's raw `category` slug to a filters.* translation key
   var categoryKeyMap = {
     temple: 'temple', nature: 'nature', museum: 'museum',
     culture: 'culture', 'tea-plantation': 'teaPlantation', waterfall: 'waterfall'
   };
 
-  /* ---------------------------------------------------------
-     3) ENGINE
-     --------------------------------------------------------- */
   function getPath(obj, path) {
     return path.split('.').reduce(function (acc, key) { return acc && acc[key] !== undefined ? acc[key] : undefined; }, obj);
   }
@@ -1848,7 +1830,6 @@
       if (value !== undefined) el.setAttribute('alt', value);
     });
 
-    // Language switcher own label / current code
     document.querySelectorAll('[data-lang-current]').forEach(function (el) {
       el.textContent = getPath(dict, 'langSwitcher.current') || lang.toUpperCase();
     });
@@ -1861,7 +1842,6 @@
       opt.classList.toggle('is-active', opt.getAttribute('data-lang') === lang);
     });
 
-    // Let other scripts (destination panel, filter chips) refresh their own content
     document.dispatchEvent(new CustomEvent('laras:langchange', { detail: { lang: lang } }));
   }
 
@@ -1885,7 +1865,6 @@
     }, FADE_MS);
   }
 
-  // Translate one destination-data field, falling back to the original (ID) value
   function translateDestination(dest, lang) {
     lang = lang || currentLang();
     var entry = destinationsI18n[dest.id];
@@ -1908,9 +1887,6 @@
     return getPath(translations[lang || currentLang()] || translations.id, path);
   }
 
-  /* ---------------------------------------------------------
-     4) LANGUAGE SWITCHER UI WIRING
-     --------------------------------------------------------- */
   function initSwitcher() {
     var trigger = document.getElementById('langTrigger');
     var menu = document.getElementById('langMenu');
@@ -1935,7 +1911,6 @@
       var lang = opt.getAttribute('data-lang');
       setLanguage(lang);
       closeMenu();
-      // If the mobile hamburger panel is open, close it too for a clean handoff
       var mobileNav = document.getElementById('navLinks');
       var navToggle = document.getElementById('navToggle');
       if (mobileNav && mobileNav.classList.contains('active')) {
@@ -1962,10 +1937,9 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     initSwitcher();
-    applyStaticTranslations(currentLang()); // no fade on first load (hidden behind loader)
+    applyStaticTranslations(currentLang()); 
   });
 
-  // Expose a small public API for the inline map/explorer script in index.html
   window.LARAS_I18N = {
     getLang: currentLang,
     setLang: setLanguage,
