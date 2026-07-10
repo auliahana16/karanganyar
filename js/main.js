@@ -1,15 +1,9 @@
-/* ============================================
-   LARAS — Main JavaScript
-   ============================================ */
-
 document.addEventListener('DOMContentLoaded', () => {
-  // ===== LOADER =====
   const loader = document.getElementById('loader');
   if (loader) {
     setTimeout(() => loader.classList.add('done'), 800);
   }
 
-  // ===== PROGRESS BAR + NAV SCROLL EFFECT (rAF-throttled) =====
   const progressFill = document.getElementById('progressFill');
   const nav = document.getElementById('nav');
   let ticking = false;
@@ -32,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  // ===== MOBILE MENU =====
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.querySelector('.nav__links');
   if (navToggle && navLinks) {
@@ -50,13 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ===== HERO REVEAL ANIMATIONS =====
   const heroReveals = document.querySelectorAll('[data-reveal]');
   heroReveals.forEach((el, i) => {
     setTimeout(() => el.classList.add('visible'), 200 + (i * 150));
   });
 
-  // ===== SCROLL REVEAL (IntersectionObserver) =====
   const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -69,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
   revealEls.forEach(el => revealObserver.observe(el));
 
-  // ===== STORIES AUTO INFINITE SCROLL + MANUAL PREV/NEXT SWIPE =====
   const storiesTrack = document.getElementById('storiesTrack');
   if (storiesTrack) {
     const wrap = storiesTrack.closest('.stories__track-wrap');
@@ -115,9 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
     storiesTrack.style.animation = 'none'; // JS now drives the movement
     window.addEventListener('resize', computeLoopWidth);
 
-    // ===== WAVE ARC: vertical position follows a cosine curve based on each =====
-    // ===== card's horizontal position — center of the row sits highest,   =====
-    // ===== the further left/right a card drifts, the lower it settles.    =====
     const storyCards = Array.from(storiesTrack.querySelectorAll('.story'));
     const hovered = new Set();
     storyCards.forEach(card => {
@@ -138,12 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
       storyCards.forEach(card => {
         const cardRect = card.getBoundingClientRect();
         const cardCenterX = cardRect.left + cardRect.width / 2;
-        // Normalize distance from center to the range [-1, 1], clamped at the edges
         let n = (cardCenterX - centerX) / halfWidth;
         if (n < -1) n = -1;
         if (n > 1) n = 1;
-        // Cosine arc: n = 0 (center) -> -amplitude (highest point, moved up)
-        // n = ±1 (edges) -> 0 (baseline, settled down)
+        
         const arcY = -amplitude * Math.cos(n * (Math.PI / 2));
         const hoverLift = hovered.has(card) ? -10 : 0;
         card.style.transform = `translateY(${arcY + hoverLift}px)`;
@@ -172,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
     wrap.addEventListener('touchend', () => { paused = false; });
   }
 
-  // ===== ACTIVE NAV LINK =====
   const navLinkEls = document.querySelectorAll('.nav__links a');
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   navLinkEls.forEach(a => {
@@ -182,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
@@ -195,7 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ===== PARALLAX HERO BACKGROUND =====
   const heroBg = document.querySelector('.hero__bg');
   if (heroBg) {
     window.addEventListener('scroll', () => {
@@ -206,7 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ===== HERO CURSOR SPOTLIGHT =====
   const heroSection = document.querySelector('.hero');
   const heroSpotlight = document.getElementById('heroSpotlight');
   if (heroSection && heroSpotlight) {
@@ -219,7 +200,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ===== MAGNETIC TILT CARDS =====
   const tiltCards = document.querySelectorAll('.tilt-card');
   tiltCards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -233,7 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ===== BUTTON RIPPLE =====
   document.querySelectorAll('.btn').forEach(btn => {
     btn.addEventListener('click', function(e) {
       const rect = this.getBoundingClientRect();
